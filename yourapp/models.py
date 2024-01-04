@@ -7,11 +7,16 @@ class Portfolio(models.Model):
     title = models.CharField(max_length = 100)
     img = models.ImageField(upload_to='images/')
 
+class Team(models.Model):
+    name = models.CharField(max_length = 100)
+    position = models.CharField(max_length = 100)
+    img = models.ImageField(upload_to='images/')
+    about = models.TextField
 
 class Message(models.Model):
     name = models.CharField(max_length = 100)
     email = models.EmailField()
-    message = models.CharField(max_length = 255)
+    message = models.TextField()
 
     def __str__(self) -> str:
         return self.name

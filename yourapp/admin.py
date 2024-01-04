@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Portfolio, Message
+from .models import Portfolio, Message, Team
 
 @admin.register(Portfolio)
 class PortfolioAdmin(admin.ModelAdmin):
-    list_display = ('sort', 'title',)
+    list_display = ('sort', 'title','img')
     search_fields = ('title',)
 
 @admin.register(Message)
@@ -22,5 +22,10 @@ class MessageAdmin(admin.ModelAdmin):
             'fields': ('message',)
         }),
     )
-
     readonly_fields = ('email',)
+
+@admin.register(Team)
+class TeamAdmin(admin.ModelAdmin):
+    list_display = ('name', 'position', 'img', 'about')
+    search_fields = ('name', 'position')
+
