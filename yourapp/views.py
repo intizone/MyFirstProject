@@ -126,3 +126,6 @@ def create_team(request):
         about="qisqacha tafsilot"
     )
     return HttpResponse("Team member created successfully")
+
+# def example(request):
+#     return render(request, "index.html")
