@@ -2,16 +2,18 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, HttpResponseRedirect, Http404
 from .models import Portfolio, Team, Message
 
+
+
 def home(request):
-    messages = Message.objects.all()
-    messages_filter = Message.objects.filter(name = "otabek")
-    message = Message.objects.get(id = 1)
-    context = {
-        "messages":messages,
-        "messages_filter":messages_filter,
-        "message":message,
-    }
-    return HttpResponse("Home page  assalomu aleykum")
+    # messages = Message.objects.all()
+    # messages_filter = Message.objects.filter(name = "otabek")
+    # message = Message.objects.get(id = 1)
+    # context = {
+    #     "messages":messages,
+    #     "messages_filter":messages_filter,
+    #     "message":message,
+    # }
+    return render(request, "index.html")
 
 def view_portfolio(request):
     try:
